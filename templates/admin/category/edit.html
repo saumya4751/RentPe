@@ -1,0 +1,32 @@
+{%extends '../master.html'%}
+    {%block content%}
+            <div class="app-title">
+              <div>
+                <h1><i class="fa fa-edit"></i> Form</h1>
+              </div>
+              <ul class="app-breadcrumb breadcrumb">
+                <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+                <li class="breadcrumb-item">Forms</li>
+                <li class="breadcrumb-item"><a href="#">Category Forms</a></li>
+              </ul>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="tile">
+                  <h3 class="tile-title">Category Form</h3>
+                  <div class="tile-body">
+                    <form method="POST" action="/admins/category/update/"  id="myform" enctype="multipart/form-data">
+                      {% csrf_token %}
+                      <input type="hidden" name="txt1" value="{{categories.0}}" >
+                      <div class="form-group">
+                        <label class="control-label">Category Name</label>
+                        <input class="form-control" type="text" name="txt2" value="{{categories.1}}" placeholder="Name"  minlength="2" required >
+                        <div class="tile-footer">
+                          <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Update</button>&nbsp;&nbsp;&nbsp;<!--a class="btn btn-secondary" href="#"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a-->
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+    {%endblock%}

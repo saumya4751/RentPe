@@ -1,0 +1,50 @@
+{% extends '../master.html' %}
+    {% block content %}
+    <section id="cart-view">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="tile">
+                <div class="tile-body">
+                  <div class="table-responsive">
+                    <h3 class="tile-title">Booking</h3>
+                    <table class="table table-hover table-bordered" id="sampleTable">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Booking Status</th>
+                          <th>Booking Master</th>
+                          <th>Booking Time</th>
+                          <th>Booking Date</th>
+                          <th>Booking Duration</th>
+                          <th>Booking Address</th>
+                          <th>User</th>
+                          <th>Product</th>
+                          <th>Product Cost</th>
+                        </tr>
+                      </thead>
+                      {% for i in booking %}
+                      <tr>
+                      <td>{{i.0}}</td>
+                      <td>{{i.1}}</td>
+                      <td>{{i.2}}</td>
+                      <td>{{i.3}}</td>
+                      <td>{{i.4}}</td>
+                      <td>{{i.5}}</td>
+                      <td>{{i.6}}</td>
+                      <td>{{i.7}}</td>
+                      <td>{{i.8}}</td>
+                      <td>{{i.9}}</td>
+                      <!--td><a href='edit/{{i.0}}'>Edit</a> | <a href='delete/{{i.0}}' onclick="return ConfirmDelete();">Delete</a> </td-->
+                      </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    {% endblock %}

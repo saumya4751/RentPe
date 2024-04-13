@@ -1,0 +1,44 @@
+{%extends '../master.html'%}
+    {%block content%}
+    {% load static %}
+    <section id="aa-catg-head-banner">
+        <img src="{% static 'user/img/fashion/2.jpg'%}" style="width: 1900px; height: 300px;" alt="fashion img">
+        <div class="aa-catg-head-banner-area">
+          <div class="container">
+           <!--div class="aa-catg-head-banner-content">
+             <h2>Blog Details</h2>
+             <ol class="breadcrumb">
+               <li><a href="index.html">Home</a></li>         
+               <li class="active">Blog Details</li>
+             </ol>
+           </div-->
+          </div>
+        </div>
+    </section>
+    <section id="aa-blog-archive">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="aa-blog-archive-area">
+                <div class="row">
+                  <div class="col-md-9">
+                    <!-- FAQ details -->
+                    <div class="aa-blog-content aa-blog-details">
+                      <article class="aa-blog-content-single">                      
+                        <h2 style="font-family: 'Times New Roman'; font-size: 50px; color: black;" >Frequently Asked Questions</h2>
+                        <br>
+                        <br>
+                        {% for i in faq %}
+                         <hr><pre style=" text-align: justify; font-family: 'Times New Roman', Times, serif; display: contents; font-size: larger;"> Q{{i.0}}.  {{i.1}}</pre></hr>
+                         <hr><pre style=" text-align: justify; font-family: 'Times New Roman', Times, serif; display: contents; margin: 25px; font-size: larger;">Ans.  {{i.2}}</pre></hr>
+                        {% endfor %}
+                      </article>
+                    </div>
+                  </div>
+                </div>           
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    {%endblock%}

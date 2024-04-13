@@ -1,0 +1,52 @@
+{%extends '../master.html'%}
+    {%block content%}
+    <div class="app-title">
+        <div>
+          <h1><i class="fa fa-edit"></i> Form</h1>
+        </div>
+        <ul class="app-breadcrumb breadcrumb">
+          <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+          <li class="breadcrumb-item">Forms</li>
+          <li class="breadcrumb-item"><a href="#">Vendor Form</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="tile">
+            <h3 class="tile-title">Vendor Form</h3>
+            <div class="tile-body">
+              <form method="POST" action="/admins/vendor/update/"  id="myform" enctype="multipart/form-data">
+                   {% csrf_token %}
+                   <input type="hidden" name="text0" value="{{vendor.0}}">
+                    <div class="form-group">
+                     <label class="control-label">Vendor Name:</label>
+                      <input class="form-control" type="varchar" name="text1" value="{{vendor.1}}" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                    <label class="control-label">Vendor Email:</label>
+                    <input class="form-control" type="email" name="text2" value="{{vendor.2}}" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                     <label class="control-label">Vendor Password:</label>
+                      <input class="form-control" type="password" name="text3" value="{{vendor.3}}" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                     <label class="control-label">Vendor Gender:</label>
+                      <input class="form-control" type="varchar" name="text4" value="{{vendor.4}}" placeholder="Gender" required> 
+                    </div>
+                    <div class="form-group">
+                     <label class="control-label">Vendor Address:</label>
+                      <input class="form-control" type="varchar" name="text5" value="{{vendor.5}}" placeholder="Address" required>
+                    </div>
+                    <div class="form-group">
+                     <label class="control-label">Vendor Image Path:</label>
+                      <input class="form-control" type="varchar" name="text7" value="{{vendor.6}}" placeholder="Path" required>
+                    </div>
+                    <div class="tile-footer">
+                      <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Update</button>&nbsp;&nbsp;&nbsp;<!--a class="btn btn-secondary" href="#"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a-->
+                    </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    {%endblock%}

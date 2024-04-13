@@ -1,0 +1,40 @@
+{% extends '../master.html' %}
+    {% block content %}
+    <section id="aa-myaccount">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="tile">
+                <div class="tile-body">
+                  <div class="table-responsive">
+                    <h3 class="tile-title">Feedback</h3>
+                    <table class="table table-hover table-bordered" id="sampleTable">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Feedback Details</th>
+                          <th>Feedback Date</th>
+                          <th>User</th>
+                          <th>Vendor</th>  
+                         </tr>
+                      </thead>
+                      <tbody>
+                        {% for i in feedbacks %}
+                          <tr>
+                            <td>{{i.0}}</td>
+                            <td>{{i.1}}</td>
+                            <td>{{i.2}}</td>
+                            <td>{{i.3}}</td>
+                            <td>{{i.4}}</td>
+                          </tr>
+                        {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>           
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {% endblock %}

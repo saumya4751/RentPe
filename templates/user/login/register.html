@@ -1,0 +1,50 @@
+{%extends '../master.html'%}
+    {%block content%}
+    <section id="aa-myaccount">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-myaccount-area">   
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="aa-myaccount-register">                 
+                                    <h4>User Register</h4>
+                                    <form method="POST" id="myform" action="/register/inserted" class="aa-login-form">
+                                        {% csrf_token %}
+                                          <div class="form-group">
+                                            <label class="control-label">User Name<span>*</span></label>
+                                            <input class="form-control" type="varchar" name="txt1" placeholder="Name" required>
+                                          </div>
+                                          <div class="form-group">
+                                            <label class="control-label">User Email<span>*</span></label>
+                                            <input class="form-control" type="email" name="txt2" placeholder="Email" required>
+                                          </div>
+                                          <div class="form-group">
+                                              <label class="control-label">User Password<span>*</span></label>
+                                              <input class="form-control" type="password" name="txt3" placeholder="Password" required>
+                                          </div>
+                                          <div class="form-group">
+                                              <label class="control-label">User Address<span>*</span></label>
+                                              <input class="form-control" type="varchar" name="txt4" placeholder="Address" required>
+                                          </div>
+                                          <div class="form-group">
+                                              <label class="control-label">User Photo<span>*</span></label>
+                                              <input class="form-control" type="varchar" name="txt5" placeholder="Photo" required>
+                                          </div>
+                                          <div class="form-group">
+                                              <label class="control-label">User Details<span>*</span></label>
+                                              <input class="form-control" type="text" name="txt6" placeholder="Details" required>
+                                          </div>
+                                          <div class="tile-footer">
+                                            <button class="aa-browse-btn" type="submit">Register</button>&nbsp;&nbsp;&nbsp;
+                                          </div>                    
+                                    </form>
+                                </div>
+                            </div>
+                        </div>          
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {%endblock%}

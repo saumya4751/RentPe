@@ -1,0 +1,52 @@
+{%extends '../master.html'%}
+    {%block content%}
+    <div class="app-title">
+        <div>
+          <h1><i class="fa fa-edit"></i> Form </h1>
+        </div>
+        <ul class="app-breadcrumb breadcrumb">
+          <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+          <li class="breadcrumb-item">Forms</li>
+          <li class="breadcrumb-item"><a href="#">User Form</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="tile">
+            <h3 class="tile-title">User Form</h3>
+            <div class="tile-body">
+              <form method="POST" action="/admins/user/update/" id="myform" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="hidden" name="txt0" value="{{user.0}}">
+                <div class="form-group">
+                  <label class="control-label">User Name</label>
+                  <input class="form-control" type="varchar" name="txt1" value="{{user.1}}" placeholder="Name" required>
+                </div>
+                <div class="form-group">
+                  <label class="control-label">User Email</label>
+                  <input class="form-control" type="email" name="txt2" value="{{user.2}}" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">User Password</label>
+                    <input class="form-control" type="password" name="txt3" value="{{user.3}}" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">User Address</label>
+                    <input class="form-control" type="varchar" name="txt4" value="{{user.4}}" placeholder="Address" required>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">User Photo</label>
+                    <input class="form-control" type="varchar" name="txt5" value="{{user.5}}" placeholder="Photo" required>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">User Details</label>
+                    <input class="form-control" type="text" name="txt6" value="{{user.6}}" placeholder="Details" required>
+                </div>
+                <div class="tile-footer">
+                  <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Update</button>&nbsp;&nbsp;&nbsp;<!--a class="btn btn-secondary" href="#"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a-->
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    {%endblock%}

@@ -1,0 +1,42 @@
+{%extends '../master.html'%}
+    {%block content%}
+            <div class="app-title">
+              <div>
+                <h1><i class="fa fa-edit"></i> Form</h1>
+              </div>
+              <ul class="app-breadcrumb breadcrumb">
+                <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+                <li class="breadcrumb-item">Forms</li>
+                <li class="breadcrumb-item"><a href="#">Image Form</a></li>
+              </ul>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="tile">
+                  <h3 class="tile-title">Image Form</h3>
+                  <div class="tile-body">
+                    <form method="POST" action="/admins/image/update/"  id="myform" enctype="multipart/form-data">
+                      {% csrf_token %}
+                      <input type="hidden" name="txt0" value="{{image.0}}" >
+                      <div class="form-group">
+                        <div class="form-group">
+                          <label class="control-label">Product</label>
+                          <select  class="form-control"  name="txt1">
+                            {% for i in product %}
+                            <option value='{{i.0}}'>{{i.1}}</option>
+                            {% endfor %}
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label class="control-label">Image Name</label>
+                          <input class="form-control" type="text" name="txt2" value="{{image.2}}" placeholder="Name" required>
+                        </div>
+                        <div class="tile-footer">
+                          <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Update</button>&nbsp;&nbsp;&nbsp;<!--a class="btn btn-secondary" href="#"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a-->
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+    {%endblock%}

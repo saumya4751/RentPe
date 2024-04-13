@@ -1,0 +1,44 @@
+{%extends '../master.html'%}
+    {%block content%}
+    <div class="app-title">
+        <div>
+          <h1><i class="fa fa-edit"></i> Form </h1>
+        </div>
+        <ul class="app-breadcrumb breadcrumb">
+          <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+          <li class="breadcrumb-item">Forms</li>
+          <li class="breadcrumb-item"><a href="#">Offer Form</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="tile">
+            <h3 class="tile-title">Offer Form</h3>
+            <div class="tile-body">
+              <form method="POST" action="/admins/offer/update/" id="myform" enctype="multipart/form-data">
+                {% csrf_token %}
+                <input type="hidden" name="txt0" value="{{offer.0}}">
+                <div class="form-group">
+                  <label class="control-label">Offer Title</label>
+                  <input class="form-control" type="varchar" name="txt1" value="{{offer.1}}" placeholder="Title" required>
+                </div>
+                <div class="form-group">
+                  <label class="control-label">Offer Details</label>
+                  <input class="form-control" type="text" name="txt2" value="{{offer.2}}" placeholder="Details" required>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Offer Start Date</label>
+                    <input class="form-control" type="text" name="txt3" value="{{offer.3}}" placeholder="Start Date" required>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Offer End Date</label>
+                    <input class="form-control" type="date" name="txt4" value="{{offer.4}}" placeholder="End Date" required>
+                </div>
+                <div class="tile-footer">
+                  <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Add</button>&nbsp;&nbsp;&nbsp;<!--a class="btn btn-secondary" href="#"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a-->
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    {%endblock%}

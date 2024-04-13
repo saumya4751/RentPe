@@ -1,0 +1,66 @@
+{%extends '../master.html'%}
+    {%block content%}
+    <section id="aa-myaccount">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="aa-myaccount-area">   
+                      <div class="row">
+                          <div class="col-md-6">
+                              <div class="aa-myaccount-register">               
+                                  <h4>Booking</h4>
+                                  <form method="POST" action="/booking/inserted" id="myform" class="aa-login-form">
+                                    {% csrf_token %}
+                                    <input class="form-control" type="hidden" name="txt1" placeholder="Status" required>
+                                    <div class="form-group">
+                                      <label class="control-label">Booking Master<span>*</span></label>
+                                      <input class="form-control" type="varchar" name="txt2" placeholder="Master" required>
+                                    </div>
+                                    <input class="form-control" type="hidden" name="txt3" placeholder="Time" required>
+                                    <input class="form-control" type="hidden" name="txt4" placeholder="Date" required>
+                                    <div class="form-group">
+                                        <label class="control-label">Booking Duration<span>*</span></label>
+                                        <select  class="form-control"  name="txt5">
+                                          <option>1 Month</option>
+                                          <option>3 Month</option>
+                                          <option>6 Month</option>
+                                          <option>12 Month</option>
+                                          <option>24 Month</option>
+                                        </select>
+                                        <!--input class="form-control" type="time" name="txt5" placeholder="Duration" required-->
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="control-label">Booking Address<span>*</span></label>
+                                      <input class="form-control" type="text" name="txt6" placeholder="Address" required>
+                                    </div>
+                                    <!--div class="form-group">
+                                      <label class="control-label">User<span>*</span></label>
+                                      <input class="form-control" type="varchar" name="txt7" placeholder="User" required>
+                                    </div-->
+                                    <div class="form-group">
+                                      <label class="control-label">Product<span>*</span></label>
+                                      <input class="form-control" type="varchar" name="txt8" value="{{booking.8}}" placeholder="Product" required>
+                                    </div>
+                                    <div class="form-group">
+                                      <label class="control-label">Product Cost<span>*</span></label>
+                                      <input class="form-control" type="int" name="txt9" placeholder="Cost" required>
+                                    </div>
+                                    <div class="tile-footer">
+                                        <button class="aa-browse-btn" type="submit">Add</button>&nbsp;&nbsp;&nbsp;
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <span class="docReq">
+                                      " Documents Required before delivery: PAN Card, Bank Statement for last 6 months &amp; Current Address Proof "
+                                    </span>
+                                    <!--p>"Documents Required before delivery: PAN Card, Bank Statement for last 6 months & Current Address Proof"</p-->
+                                  </form>
+                              </div>
+                          </div>
+                      </div>          
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
+    {%endblock%}

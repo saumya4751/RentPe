@@ -1,0 +1,43 @@
+{%extends '../master.html'%}
+    {% block content %}
+        <div class="app-title">
+          <div>
+            <h1><i class="fa fa-th-list"></i> Table</h1>
+          </div>
+          <ul class="app-breadcrumb breadcrumb">
+            <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+            <li class="breadcrumb-item">Tables</li>
+            <li class="breadcrumb-item active"><a href="#">FAQ </a></li>
+          </ul>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="tile">
+              <h3 class="tile-title">FAQ </h3>
+              <div class="tile-body">
+                <div class="table-responsive">
+                  <table class="table table-hover table-bordered" id="sampleTable">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>FAQ Question</th>
+                        <th>FAQ Answer</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    {% for i in faq %}
+                    <tr>
+                    <td>{{i.0}}</td>
+                    <td>{{i.1}}</td>
+                    <td>{{i.2}}</td>
+                    <td><a href='edit/{{i.0}}'>Edit</a> | <a href='delete/{{i.0}}' onclick="return ConfirmDelete();">Delete</a> </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    {%endblock%}

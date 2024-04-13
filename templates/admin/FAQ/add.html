@@ -1,0 +1,35 @@
+{%extends '../master.html'%}
+    {%block content%}
+    <div class="app-title">
+        <div>
+          <h1><i class="fa fa-edit"></i> Form</h1>
+        </div>
+        <ul class="app-breadcrumb breadcrumb">
+          <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+          <li class="breadcrumb-item">Forms</li>
+          <li class="breadcrumb-item"><a href="#">FAQ Form</a></li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="tile">
+            <h3 class="tile-title">Feedback Form</h3>
+            <div class="tile-body">
+              <form method="POST" action="/admins/FAQ/inserted/"  id="myform" enctype="multipart/form-data">
+	               {% csrf_token %}
+                    <div class="form-group">
+                    <label class="control-label">FAQ Question</label>
+                    <input class="form-control" type="varchar" name="txt1" placeholder="Question" required>
+                    </div>
+                    <div class="form-group">
+                     <label class="control-label">FAQ Answer</label>
+                      <input class="form-control" type="varchar" name="txt2" placeholder="Answer" required>
+                    </div>
+                    <div class="tile-footer">
+                      <button class="btn btn-primary" type="submit"><i class="fa fa-fw fa-lg fa-check-circle"></i>Add</button>&nbsp;&nbsp;&nbsp;<!--a class="btn btn-secondary" href="#"><i class="fa fa-fw fa-lg fa-times-circle"></i>Cancel</a-->
+                    </div>
+              </form>
+            </div>
+          </div>
+        </div>
+    {%endblock%}

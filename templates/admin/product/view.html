@@ -1,0 +1,65 @@
+{%extends '../master.html'%}
+    {%block content%}
+    {% load static %}
+        <div class="app-title">
+          <div>
+            <h1><i class="fa fa-th-list"></i> Table</h1>
+          </div>
+          <ul class="app-breadcrumb breadcrumb">
+            <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+            <li class="breadcrumb-item">Tables</li>
+            <li class="breadcrumb-item active"><a href="#">Product Table</a></li>
+          </ul>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="tile">
+              <h3 class="tile-title">Product Table</h3>
+              <div class="tile-body">
+                <div class="table-responsive">
+                  <table class="table table-hover table-bordered" id="sampleTable">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Product Name</th>
+                        <th>Product Details</th>
+                        <th>Product Cost($)</th>
+                        <th>Product Cost_3($)</th>
+                        <th>Product Cost_6($)</th>
+                        <th>Product Cost_12($)</th>
+                        <th>Product Cost_24($)</th>
+                        <th>Product Quantity</th>
+                        <th>Product Note</th>
+                        <th>Product Image Path</th>
+                        <th>SubCategory</th>
+                        <th>Vendor </th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    {% for i in product %}
+                    <tr>
+                    <td>{{i.0}}</td>
+                    <td>{{i.1}}</td>
+                    <td>{{i.2}}</td>
+                    <td>{{i.3}}</td>
+                    <td>{{i.4}}</td>
+                    <td>{{i.5}}</td>
+                    <td>{{i.6}}</td>
+                    <td>{{i.7}}</td>
+                    <td>{{i.8}}</td>
+
+                    <td><img src="{% static 'upload/' %}{{i.9}}" style='width:100px;height:100px;'></td>
+                    <td>{{i.10}}</td>
+                    <td>{{i.11}}</td>
+                    <td>{{i.12}}</td>
+                    <td><a href='edit/{{i.0}}'>Edit</a> | <a href='delete/{{i.0}}' onclick="return ConfirmDelete();">Delete</a> </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    {%endblock%}

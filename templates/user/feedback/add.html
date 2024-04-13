@@ -1,0 +1,42 @@
+{%extends '../master.html'%}
+    {%block content%}
+    <section id="aa-myaccount">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="aa-myaccount-area">   
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="aa-myaccount-register">                 
+                                    <h4>Feedback</h4>
+                                    <form method="POST" id="myform" action="/feedback/inserted" class="aa-login-form">
+                                        {% csrf_token %}
+                                          <div class="form-group">
+                                            <label class="control-label">Feedback Details<span>*</span></label>
+                                            <input class="form-control" type="varchar" name="txt1" placeholder="Details" required>
+                                          </div>
+                                          <div class="form-group">
+                                            <label class="control-label">Feedback Date<span>*</span></label>
+                                            <input class="form-control" type="date" name="txt2" placeholder="Date" required>
+                                          </div>
+                                          <!--div class="form-group">
+                                              <label class="control-label">User id<span>*</span></label>
+                                              <input class="form-control" type="varchar" name="txt3" placeholder="User" required>
+                                          </div-->
+                                          <div class="form-group">
+                                              <label class="control-label">Vendor id<span>*</span></label>
+                                              <input class="form-control" type="varchar" name="txt4" placeholder="Vendor" required>
+                                          </div>
+                                          <div class="tile-footer">
+                                            <button class="aa-browse-btn" type="submit">Add</button>&nbsp;&nbsp;&nbsp;
+                                          </div>                    
+                                    </form>
+                                </div>
+                            </div>
+                        </div>          
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {%endblock%}
